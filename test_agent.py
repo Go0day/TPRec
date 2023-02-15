@@ -226,7 +226,7 @@ def evaluate_paths(path_file, train_labels, test_labels):
 
 def test(args):
     policy_file = args.log_dir + '/policy_model_epoch_{}.ckpt'.format(args.epochs)
-    path_file = args.log_dir + '/policy_paths_epoch{}.pkl'.format(args.epochs)
+    path_file = args.log_dir + '/policy_paths_epoch_{}.pkl'.format(args.epochs)
 
     train_labels = load_labels(args.dataset, 'train')
     test_labels = load_labels(args.dataset, 'test')
@@ -245,14 +245,14 @@ if __name__ == '__main__':
     parser.add_argument('--seed', type=int, default=123, help='random seed.')
     parser.add_argument('--gpu', type=str, default='1', help='gpu device.')
     parser.add_argument('--epochs', type=int, default=50, help='num of epochs.')
-    parser.add_argument('--max_acts', type=int, default=250, help='Max number of actions.')
+    parser.add_argument('--max_acts', type=int, default=150, help='Max number of actions.')
     parser.add_argument('--max_path_len', type=int, default=3, help='Max path length.')
     parser.add_argument('--gamma', type=float, default=0.99, help='reward discount factor.')
     parser.add_argument('--state_history', type=int, default=1, help='state history length')
     parser.add_argument('--hidden', type=int, nargs='*', default=[512, 256], help='number of samples')
     parser.add_argument('--add_products', type=boolean, default=False, help='Add predicted products up to 10')
     parser.add_argument('--topk', type=int, nargs='*', default=[25, 5, 1], help='number of samples')
-    parser.add_argument('--run_path', type=boolean, default=False, help='Generate predicted path? (takes long time)')
+    parser.add_argument('--run_path', type=boolean, default=True, help='Generate predicted path? (takes long time)')
     parser.add_argument('--run_eval', type=boolean, default=True, help='Run evaluation?')
     args = parser.parse_args()
 
