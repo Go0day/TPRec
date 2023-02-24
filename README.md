@@ -10,7 +10,7 @@ Three Amazon datasets used in this paper can be download [here](https://drive.go
 - PyTorch = 1.0
 
 ## How to run the code
-1. Proprocess the temporal information.
+1. Preprocess the temporal information.
 ```bash
 python GMM_process.py --dataset <dataset_name> --cluster_num <num> --cluster_feature <temporal_feature>
 ```
@@ -18,7 +18,7 @@ python GMM_process.py --dataset <dataset_name> --cluster_num <num> --cluster_fea
 "temporal_feature" should be one of "all", "w-stru", "w-stat".
 
 
-2. Proprocess the data:
+2. Preprocess the data:
 ```bash
 python preprocess.py --dataset <dataset_name>
 ```
